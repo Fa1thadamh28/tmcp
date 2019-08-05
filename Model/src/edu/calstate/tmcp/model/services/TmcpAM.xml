@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TmcpAM"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  ComponentClass="edu.calstate.tmcp.model.framework.TmcpApplicationModuleImpl"
+  ClearCacheOnRollback="true">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="edu.calstate.tmcp.model.services.TmcpAM_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewUsage
+    Name="TmcCsuPV1"
+    ViewObjectName="edu.calstate.tmcp.model.queries.TmcCsuPV"/>
+  <ViewUsage
+    Name="TmcCsuPView1"
+    ViewObjectName="edu.calstate.tmcp.model.queries.TmcCsuPView"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="edu.calstate.tmcp.model.resources.ModelBundle"/>
+  </ResourceBundle>
+</AppModule>

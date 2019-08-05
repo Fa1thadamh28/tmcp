@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1" topHeight="200px" bottomHeight="15px">
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top">
+      <af:panelHeader text="CSU TMC search site" id="ph1">
+        <af:query id="qryId1" headerText="Search" disclosed="true"
+                  value="#{bindings.TmcCsuPVCriteriaQuery1.queryDescriptor}"
+                  model="#{bindings.TmcCsuPVCriteriaQuery1.queryModel}"
+                  queryListener="#{bindings.TmcCsuPVCriteriaQuery1.processQuery}"
+                  queryOperationListener="#{bindings.TmcCsuPVCriteriaQuery1.processQueryOperation}"
+                  resultComponentId="::pc1:resId1" rows="4" maxColumns="2"/>
+      </af:panelHeader>
+    </f:facet>
+    <f:facet name="bottom"/>
+    <f:facet name="center">
+      <af:panelCollection id="pc1">
+        <f:facet name="menus">
+          <af:menu text="My Option(s)" id="m1">
+            <af:commandMenuItem text="Export to Excel" id="cmi1" partialTriggers="::qryId1"
+                                disabled="#{bindings.TmcCsuPV1Iterator.estimatedRowCount lt 1}">
+              <af:exportCollectionActionListener type="excelHTML" exportedId="resId1" filename="CsuTmcMatches.xls"
+                                                 title="CSU TMC Matches"/>
+            </af:commandMenuItem>
+          </af:menu>
+        </f:facet>
+        <f:facet name="toolbar"/>
+        <f:facet name="statusbar"/>
+        <af:table value="#{bindings.TmcCsuPV11.collectionModel}" var="row" rows="#{bindings.TmcCsuPV11.rangeSize}"
+                  emptyText="#{bindings.TmcCsuPV11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  rowBandingInterval="0" selectedRowKeys="#{bindings.TmcCsuPV11.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.TmcCsuPV11.collectionModel.makeCurrent}" rowSelection="single"
+                  fetchSize="#{bindings.TmcCsuPV11.rangeSize}" id="resId1" summary="Active TMCs"
+                  columnStretching="column:resId1c11">
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.MoKey.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.MoKey.label}" id="resId1c29" width="108">
+            <af:outputText value="#{row.MoKey}" shortDesc="#{bindings.TmcCsuPV11.hints.MoKey.tooltip}" id="ot29"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.CsuDegCampus.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.CsuDegCampus.label}" id="resId1c1" width="45">
+            <af:outputText value="#{row.CsuDegCampus}" shortDesc="#{bindings.TmcCsuPV11.hints.CsuDegCampus.tooltip}"
+                           id="ot1"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.CampusName.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.CampusName.label}" id="resId1c9">
+            <af:outputText value="#{row.CampusName}" shortDesc="#{bindings.TmcCsuPV11.hints.CampusName.tooltip}"
+                           id="ot9"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.CsuDegType.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.CsuDegType.label}" id="resId1c2" width="50">
+            <af:outputText value="#{row.CsuDegType}" shortDesc="#{bindings.TmcCsuPV11.hints.CsuDegType.tooltip}"
+                           id="ot2"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.CsuDegMajorCd.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.CsuDegMajorCd.label}" id="resId1c3" width="65">
+            <af:outputText value="#{row.CsuDegMajorCd}" shortDesc="#{bindings.TmcCsuPV11.hints.CsuDegMajorCd.tooltip}"
+                           id="ot3"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.MajorTwo.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.MajorTwo.label}" id="resId1c4" width="100"
+                     rendered="false">
+            <af:outputText value="#{row.MajorTwo}" shortDesc="#{bindings.TmcCsuPV11.hints.MajorTwo.tooltip}" id="ot4"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.CipCode.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.CipCode.label}" id="resId1c16" width="58">
+            <af:outputText value="#{row.CipCode}" shortDesc="#{bindings.TmcCsuPV11.hints.CipCode.tooltip}" id="ot16"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.DisciplineTitle.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.DisciplineTitle.label}" id="resId1c13">
+            <af:outputText value="#{row.DisciplineTitle}"
+                           shortDesc="#{bindings.TmcCsuPV11.hints.DisciplineTitle.tooltip}" id="ot13"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.CsuDegCnctrCd.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.CsuDegCnctrCd.label}" id="resId1c5" width="68">
+            <af:outputText value="#{row.CsuDegCnctrCd}" shortDesc="#{bindings.TmcCsuPV11.hints.CsuDegCnctrCd.tooltip}"
+                           id="ot5"/>
+          </af:column>
+          <af:column
+                     headerText="#{bindings.TmcCsuPV11.hints.CsuDegCnctrSeq.label}" id="resId1c6" width="30">
+            <af:outputText value="#{row.CsuDegCnctrSeq}" shortDesc="#{bindings.TmcCsuPV11.hints.CsuDegCnctrSeq.tooltip}"
+                           id="ot6"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.CsuDegSource.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.CsuDegSource.label}" id="resId1c7" rendered="false">
+            <af:outputText value="#{row.CsuDegSource}" shortDesc="#{bindings.TmcCsuPV11.hints.CsuDegSource.tooltip}"
+                           id="ot7"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.CsuDegCampTitle.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.CsuDegCampTitle.label}" id="resId1c10" width="120">
+            <af:outputText value="#{row.CsuDegCampTitle}"
+                           shortDesc="#{bindings.TmcCsuPV11.hints.CsuDegCampTitle.tooltip}" id="ot10"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.CsuDegCntrTitle.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.CsuDegCntrTitle.label}" id="resId1c11">
+            <af:outputText value="#{row.CsuDegCntrTitle}"
+                           shortDesc="#{bindings.TmcCsuPV11.hints.CsuDegCntrTitle.tooltip}" id="ot11"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.TmcCode.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.TmcCode.label}" id="resId1c8" width="48">
+            <af:outputText value="#{row.TmcCode}" shortDesc="#{bindings.TmcCsuPV11.hints.TmcCode.tooltip}" id="ot8"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.TmcDescription.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.TmcDescription.label}" id="resId1c17" width="120">
+            <af:outputText value="#{row.TmcDescription}" shortDesc="#{bindings.TmcCsuPV11.hints.TmcDescription.tooltip}"
+                           id="ot17"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.CccProgramType.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.CccProgramType.label}" id="resId1c18" width="65">
+            <af:outputText value="#{row.CccProgramType}" shortDesc="#{bindings.TmcCsuPV11.hints.CccProgramType.tooltip}"
+                           id="ot18"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.CsuDegDeliver.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.CsuDegDeliver.label}" id="resId1c12" width="75">
+            <af:outputText value="#{row.CsuDegDeliver}" shortDesc="#{bindings.TmcCsuPV11.hints.CsuDegDeliver.tooltip}"
+                           id="ot12"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.DisciplineCode.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.DisciplineCode.label}" id="resId1c14" rendered="false">
+            <af:outputText value="#{row.DisciplineCode}" shortDesc="#{bindings.TmcCsuPV11.hints.DisciplineCode.tooltip}"
+                           id="ot14"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.DegreePrgTitle.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.DegreePrgTitle.label}" id="resId1c15" rendered="false">
+            <af:outputText value="#{row.DegreePrgTitle}" shortDesc="#{bindings.TmcCsuPV11.hints.DegreePrgTitle.tooltip}"
+                           id="ot15"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.Approved.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.Approved.label}" id="resId1c19" width="50">
+            <af:outputText value="#{row.Approved}" shortDesc="#{bindings.TmcCsuPV11.hints.Approved.tooltip}" id="ot19"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.ApprovedDate.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.ApprovedDate.label}" id="resId1c20" width="60">
+            <af:outputText value="#{row.ApprovedDate}" shortDesc="#{bindings.TmcCsuPV11.hints.ApprovedDate.tooltip}"
+                           id="ot20">
+              <af:convertDateTime pattern="#{bindings.TmcCsuPV11.hints.ApprovedDate.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.EffectiveTerm.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.EffectiveTerm.label}" id="resId1c21" width="60">
+            <af:outputText value="#{row.EffectiveTerm}" shortDesc="#{bindings.TmcCsuPV11.hints.EffectiveTerm.tooltip}"
+                           id="ot21"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPV11.hints.EffectiveDate.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPV11.hints.EffectiveDate.label}" id="resId1c22" width="60">
+            <af:outputText value="#{row.EffectiveDate}" shortDesc="#{bindings.TmcCsuPV11.hints.EffectiveDate.tooltip}"
+                           id="ot22">
+              <af:convertDateTime pattern="#{bindings.TmcCsuPV11.hints.EffectiveDate.format}"/>
+            </af:outputText>
+          </af:column>
+        </af:table>
+        <f:facet name="afterToolbar">
+          <af:group id="g1">
+            <af:outputText value="Total record(s) found : #{bindings.TmcCsuPV1Iterator.estimatedRowCount}" id="ot30"
+                           partialTriggers="::qryId1"/>
+          </af:group>
+        </f:facet>
+      </af:panelCollection>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

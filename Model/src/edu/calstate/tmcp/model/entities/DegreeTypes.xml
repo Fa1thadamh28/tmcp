@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DegreeTypes"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="DEGPMGR.DEGREE_TYPES"
+  AliasName="DegreeTypes"
+  BindingStyle="OracleName"
+  RowClass="edu.calstate.tmcp.model.framework.TmcpEntityImpl">
+  <Attribute
+    Name="DegreeType"
+    IsNotNull="true"
+    Precision="7"
+    ColumnName="DEGREE_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEGPMGR.DEGREE_TYPES"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DegLevelCode"
+    Precision="1"
+    ColumnName="DEG_LEVEL_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEGPMGR.DEGREE_TYPES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DegreeTypeName"
+    Precision="50"
+    ColumnName="DEGREE_TYPE_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEGPMGR.DEGREE_TYPES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EffectiveYrTerm"
+    Precision="6"
+    ColumnName="EFFECTIVE_YR_TERM"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEGPMGR.DEGREE_TYPES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="6"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DegDefined"
+    Precision="1"
+    ColumnName="DEG_DEFINED"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEGPMGR.DEGREE_TYPES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="PkDegreeTypes"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_DEGREE_TYPES"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="edu.calstate.tmcp.model.entities.DegreeTypes.DegreeType"/>
+    </AttrArray>
+  </Key>
+</Entity>

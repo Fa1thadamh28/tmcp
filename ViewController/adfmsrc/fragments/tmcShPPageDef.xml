@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="tmcShPPageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TmcCsuPV1" RangeSize="25" DataControl="TmcpAMDataControl" id="TmcCsuPV1Iterator"/>
+    <searchRegion Criteria="TmcCsuPVCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="TmcCsuPV1Iterator" id="TmcCsuPVCriteriaQuery"/>
+    <searchRegion Criteria="TmcCsuPVCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="TmcCsuPV1Iterator" id="TmcCsuPVCriteriaQuery1"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TmcCsuPV1Iterator" id="TmcCsuPV1">
+      <nodeDefinition DefName="edu.calstate.tmcp.model.queries.TmcCsuPV" Name="TmcCsuPV10">
+        <AttrNames>
+          <Item Value="CsuDegCampus"/>
+          <Item Value="CsuDegType"/>
+          <Item Value="CsuDegMajorCd"/>
+          <Item Value="MajorTwo"/>
+          <Item Value="CsuDegCnctrCd"/>
+          <Item Value="CsuDegCnctrSeq"/>
+          <Item Value="CsuDegSource"/>
+          <Item Value="TmcCode"/>
+          <Item Value="CampusName"/>
+          <Item Value="CsuDegCampTitle"/>
+          <Item Value="CsuDegCntrTitle"/>
+          <Item Value="CsuDegDeliver"/>
+          <Item Value="DisciplineTitle"/>
+          <Item Value="DisciplineCode"/>
+          <Item Value="DegreePrgTitle"/>
+          <Item Value="CipCode"/>
+          <Item Value="TmcDescription"/>
+          <Item Value="CccProgramType"/>
+          <Item Value="Approved"/>
+          <Item Value="ApprovedDate"/>
+          <Item Value="EffectiveTerm"/>
+          <Item Value="EffectiveDate"/>
+          <Item Value="InactiveTerm"/>
+          <Item Value="InactiveDate"/>
+          <Item Value="UpdateUser"/>
+          <Item Value="UpdateDate"/>
+          <Item Value="CreateUser"/>
+          <Item Value="CreateDate"/>
+          <Item Value="MoKey"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TmcCsuPV1Iterator" id="TmcCsuPV11">
+      <nodeDefinition DefName="edu.calstate.tmcp.model.queries.TmcCsuPV" Name="TmcCsuPV110">
+        <AttrNames>
+          <Item Value="CsuDegCampus"/>
+          <Item Value="CsuDegType"/>
+          <Item Value="CsuDegMajorCd"/>
+          <Item Value="MajorTwo"/>
+          <Item Value="CsuDegCnctrCd"/>
+          <Item Value="CsuDegCnctrSeq"/>
+          <Item Value="CsuDegSource"/>
+          <Item Value="TmcCode"/>
+          <Item Value="CampusName"/>
+          <Item Value="CsuDegCampTitle"/>
+          <Item Value="CsuDegCntrTitle"/>
+          <Item Value="CsuDegDeliver"/>
+          <Item Value="DisciplineTitle"/>
+          <Item Value="DisciplineCode"/>
+          <Item Value="DegreePrgTitle"/>
+          <Item Value="CipCode"/>
+          <Item Value="TmcDescription"/>
+          <Item Value="CccProgramType"/>
+          <Item Value="Approved"/>
+          <Item Value="ApprovedDate"/>
+          <Item Value="EffectiveTerm"/>
+          <Item Value="EffectiveDate"/>
+          <Item Value="InactiveTerm"/>
+          <Item Value="InactiveDate"/>
+          <Item Value="UpdateUser"/>
+          <Item Value="UpdateDate"/>
+          <Item Value="CreateUser"/>
+          <Item Value="CreateDate"/>
+          <Item Value="MoKey"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

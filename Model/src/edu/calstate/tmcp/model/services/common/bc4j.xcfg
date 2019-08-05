@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!---->
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.1">
+  <AppModuleConfigBag ApplicationName="edu.calstate.tmcp.model.services.TmcpAM">
+    <AppModuleConfig name="TmcpAMLocal" jbo.project="edu.calstate.tmcp.model.Model"
+                     ApplicationName="edu.calstate.tmcp.model.services.TmcpAM" DeployPlatform="LOCAL" JDBCName="TPConn">
+      <Database jbo.TypeMapEntries="OracleApps"/>
+      <Security AppModuleJndiName="edu.calstate.tmcp.model.services.TmcpAM"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="TmcpAMShared" jbo.project="edu.calstate.tmcp.model.Model"
+                     ApplicationName="edu.calstate.tmcp.model.services.TmcpAM" DeployPlatform="LOCAL" JDBCName="TPConn">
+      <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.TypeMapEntries="OracleApps"/>
+      <Security AppModuleJndiName="edu.calstate.tmcp.model.services.TmcpAM"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
+</BC4JConfig>

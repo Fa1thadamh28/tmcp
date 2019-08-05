@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Campus"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="DEGPMGR.CAMPUS"
+  AliasName="Campus"
+  BindingStyle="OracleName"
+  RowClass="edu.calstate.tmcp.model.framework.TmcpEntityImpl">
+  <Attribute
+    Name="CampusCode"
+    IsNotNull="true"
+    Precision="2"
+    ColumnName="CAMPUS_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEGPMGR.CAMPUS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CampusName"
+    Precision="55"
+    ColumnName="CAMPUS_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEGPMGR.CAMPUS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="55"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreateUser"
+    IsNotNull="true"
+    Precision="15"
+    ColumnName="CREATE_USER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEGPMGR.CAMPUS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreateDate"
+    IsNotNull="true"
+    ColumnName="CREATE_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DEGPMGR.CAMPUS"/>
+  <Attribute
+    Name="UpdateUser"
+    Precision="15"
+    ColumnName="UPDATE_USER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEGPMGR.CAMPUS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UpdateDate"
+    ColumnName="UPDATE_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DEGPMGR.CAMPUS"/>
+  <Attribute
+    Name="AcademicTerm"
+    Precision="1"
+    ColumnName="ACADEMIC_TERM"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEGPMGR.CAMPUS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="CampusPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="CAMPUS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="edu.calstate.tmcp.model.entities.Campus.CampusCode"/>
+    </AttrArray>
+  </Key>
+</Entity>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DegreeProgramCodes"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="DEGPMGR.DEGREE_PROGRAM_CODES"
+  AliasName="DegreeProgramCodes"
+  BindingStyle="OracleName"
+  RowClass="edu.calstate.tmcp.model.framework.TmcpEntityImpl">
+  <Attribute
+    Name="DegreePrgCode"
+    IsNotNull="true"
+    Precision="5"
+    ColumnName="DEGREE_PRG_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEGPMGR.DEGREE_PROGRAM_CODES"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DegreePrgTitle"
+    Precision="100"
+    ColumnName="DEGREE_PRG_TITLE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEGPMGR.DEGREE_PROGRAM_CODES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CipCode"
+    Precision="7"
+    ColumnName="CIP_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEGPMGR.DEGREE_PROGRAM_CODES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ActiveDate"
+    ColumnName="ACTIVE_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DEGPMGR.DEGREE_PROGRAM_CODES"/>
+  <Attribute
+    Name="InactiveDate"
+    ColumnName="INACTIVE_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DEGPMGR.DEGREE_PROGRAM_CODES"/>
+  <Attribute
+    Name="CreateUser"
+    IsNotNull="true"
+    Precision="15"
+    ColumnName="CREATE_USER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEGPMGR.DEGREE_PROGRAM_CODES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreateDate"
+    IsNotNull="true"
+    ColumnName="CREATE_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DEGPMGR.DEGREE_PROGRAM_CODES"/>
+  <Attribute
+    Name="UpdateUser"
+    Precision="15"
+    ColumnName="UPDATE_USER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEGPMGR.DEGREE_PROGRAM_CODES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UpdateDate"
+    ColumnName="UPDATE_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DEGPMGR.DEGREE_PROGRAM_CODES"/>
+  <Key
+    Name="DegreeProgramCodesPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DEGREE_PROGRAM_CODES_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="edu.calstate.tmcp.model.entities.DegreeProgramCodes.DegreePrgCode"/>
+    </AttrArray>
+  </Key>
+</Entity>

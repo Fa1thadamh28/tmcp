@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.9.14" id="DataBindings"
+             SeparateXMLFiles="false" Package="edu.calstate.tmcp.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/WEB-INF/template/tmcpTemplate.jspx" usageId="edu_calstate_tmcp_view_tmcpTemplatePageDef"/>
+    <page path="/TmcSchP.jspx" usageId="edu_calstate_tmcp_view_TmcSchPPageDef"/>
+    <page path="/fragments/tmcShP.jsff" usageId="edu_calstate_tmcp_view_tmcShPPageDef"/>
+    <page path="/fragments/tmcSchP.jsff" usageId="edu_calstate_tmcp_view_tmcSchPPageDef"/>
+    <page path="/TmcSchP2.jspx" usageId="edu_calstate_tmcp_view_TmcSchP2PageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="edu_calstate_tmcp_view_tmcpTemplatePageDef" path="template.tmcpTemplatePageDef"/>
+    <page id="edu_calstate_tmcp_view_TmcSchPPageDef" path="edu.calstate.tmcp.view.pageDefs.TmcSchPPageDef"/>
+    <page id="edu_calstate_tmcp_view_tmcShPPageDef" path="fragments.tmcShPPageDef"/>
+    <page id="edu_calstate_tmcp_view_tmcSchPPageDef" path="fragments.tmcSchPPageDef"/>
+    <page id="edu_calstate_tmcp_view_TmcSchP2PageDef" path="edu.calstate.tmcp.view.pageDefs.TmcSchP2PageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="TmcpAMDataControl" Package="edu.calstate.tmcp.model.services"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="TmcpAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

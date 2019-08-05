@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TmcCsuPV"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  RowClass="edu.calstate.tmcp.model.queries.TmcCsuPVRowImpl"
+  ComponentClass="edu.calstate.tmcp.model.queries.TmcCsuPVImpl"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Coll"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="edu.calstate.tmcp.model.queries.TmcCsuPV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="qCampusCode"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="qDegreeType"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="qMajorCode"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="qOptionCode"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="qTmc"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="qDisciplineCode"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="qGenericMajor"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <ViewAccessor
+    Name="AllCampusView1"
+    ViewObjectName="edu.calstate.tmcp.model.queries.AllCampusView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DegreeTypeView1"
+    ViewObjectName="edu.calstate.tmcp.model.queries.DegreeTypeView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="VwAllDegreeCodes1"
+    ViewObjectName="edu.calstate.tmcp.model.queries.VwAllDegreeCodes"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="TmcV1"
+    ViewObjectName="edu.calstate.tmcp.model.queries.TmcV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DisciplineV1"
+    ViewObjectName="edu.calstate.tmcp.model.queries.DisciplineV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="VwAllDegreeCodes2"
+    ViewObjectName="edu.calstate.tmcp.model.queries.VwAllDegreeCodes"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_CsuDegCampus"
+    ListVOName="AllCampusView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CsuDegCampus"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CampusCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CampusCode"/>
+      <Item Value="CampusName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CsuDegType"
+    ListVOName="DegreeTypeView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CsuDegType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DegreeType"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DegreeType"/>
+      <Item Value="DegreeTypeName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CsuDegMajorCd"
+    ListVOName="VwAllDegreeCodes1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CsuDegMajorCd"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DegreePrgCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DegreePrgCode"/>
+      <Item Value="DegreePrgTitle"/>
+      <Item Value="CipCode"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="AllDegreeCri"
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TmcCode"
+    ListVOName="TmcV1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TmcCode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TmcCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TmcCode"/>
+      <Item Value="TmcDescription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DisciplineCode"
+    ListVOName="DisciplineV1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DisciplineCode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DisciplineCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DisciplineCode"/>
+      <Item Value="DisciplineTitle"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CsuDegCnctrCd"
+    ListVOName="VwAllDegreeCodes2"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CsuDegCnctrCd"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DegreePrgCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DegreePrgCode"/>
+      <Item Value="DegreePrgTitle"/>
+      <Item Value="CipCode"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="AllDegreeCri"
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <SQLQuery><![CDATA[SELECT T.CSU_DEG_CAMPUS, 
+       T.CSU_DEG_TYPE, 
+       T.CSU_DEG_MAJOR_CD, 
+       SUBSTR (T.CSU_DEG_MAJOR_CD, 1, 2) AS MAJOR_TWO, 
+       T.CSU_DEG_CNCTR_CD, 
+       T.CSU_DEG_CNCTR_SEQ, 
+       T.CSU_DEG_SOURCE, 
+       T.TMC_CODE, 
+       C.CAMPUS_NAME, 
+       D.CSU_DEG_CAMP_TITLE, 
+       D.CSU_DEG_CNTR_TITLE, 
+       D.CSU_DEG_DELIVER, 
+       DD.DISCIPLINE_TITLE, 
+       DD.DISCIPLINE_CODE, 
+       P.DEGREE_PRG_TITLE, 
+       P.CIP_CODE, 
+       RT.TMC_DESCRIPTION, 
+       RT.CCC_PROGRAM_TYPE, 
+       T.APPROVED, 
+       T.APPROVED_DATE, 
+       T.EFFECTIVE_TERM, 
+       T.EFFECTIVE_DATE, 
+       T.INACTIVE_TERM, 
+       T.INACTIVE_DATE, 
+       T.UPDATE_USER, 
+       T.UPDATE_DATE, 
+       T.CREATE_USER, 
+       T.CREATE_DATE 
+  FROM DEGPMGR.TMC_CSU_M             T, 
+       DEGPMGR.CAMPUS                C, 
+       DEGPMGR.CSU_TMC_VW1           D, 
+       DEGPMGR.DISCIPLINE_DIVISION   DD, 
+       DEGPMGR.DEGREE_PROGRAM_CODES  P, 
+       DEGPMGR.TMC                   RT 
+ WHERE     T.CSU_DEG_CAMPUS = C.CAMPUS_CODE 
+       AND (    T.CSU_DEG_CAMPUS = D.CSU_DEG_CAMPUS 
+            AND T.CSU_DEG_TYPE = D.CSU_DEG_TYPE 
+            AND T.CSU_DEG_MAJOR_CD = D.CSU_DEG_MAJOR_CD 
+            AND T.CSU_DEG_CNCTR_CD = D.CSU_DEG_CNCTR_CD 
+            AND T.CSU_DEG_CNCTR_SEQ = D.CSU_DEG_CNCTR_SEQ 
+            AND T.CSU_DEG_SOURCE = D.CSU_DEG_SOURCE) 
+       AND SUBSTR (T.CSU_DEG_MAJOR_CD, 1, 2) = DD.DISCIPLINE_CODE 
+       AND T.CSU_DEG_MAJOR_CD = P.DEGREE_PRG_CODE 
+       AND T.TMC_CODE = RT.TMC_CODE 
+       AND T.APPROVED = 'Y' 
+       AND T.INACTIVE_TERM IS NULL]]></SQLQuery>
+  <ViewAttribute
+    Name="CsuDegCampus"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CSU_DEG_CAMPUS"
+    Expression="CSU_DEG_CAMPUS"
+    SQLType="VARCHAR"
+    LOVName="LOV_CsuDegCampus">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.CsuDegCampus_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CsuDegType"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="7"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CSU_DEG_TYPE"
+    Expression="CSU_DEG_TYPE"
+    SQLType="VARCHAR"
+    LOVName="LOV_CsuDegType">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.CsuDegType_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CsuDegMajorCd"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="5"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CSU_DEG_MAJOR_CD"
+    Expression="CSU_DEG_MAJOR_CD"
+    SQLType="VARCHAR"
+    LOVName="LOV_CsuDegMajorCd">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.CsuDegMajorCd_LABEL"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MajorTwo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="2"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="MAJOR_TWO"
+    Expression="MAJOR_TWO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CsuDegCnctrCd"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="5"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CSU_DEG_CNCTR_CD"
+    Expression="CSU_DEG_CNCTR_CD"
+    SQLType="VARCHAR"
+    LOVName="LOV_CsuDegCnctrCd">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.CsuDegCnctrCd_LABEL"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CsuDegCnctrSeq"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="2"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CSU_DEG_CNCTR_SEQ"
+    Expression="CSU_DEG_CNCTR_SEQ"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.CsuDegCnctrSeq_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CsuDegSource"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="3"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CSU_DEG_SOURCE"
+    Expression="CSU_DEG_SOURCE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TmcCode"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="4"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TMC_CODE"
+    Expression="TMC_CODE"
+    SQLType="VARCHAR"
+    LOVName="LOV_TmcCode">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="4"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.TmcCode_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CampusName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="55"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CAMPUS_NAME"
+    Expression="CAMPUS_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="55"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.CampusName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CsuDegCampTitle"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CSU_DEG_CAMP_TITLE"
+    Expression="CSU_DEG_CAMP_TITLE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.CsuDegCampTitle_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CsuDegCntrTitle"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CSU_DEG_CNTR_TITLE"
+    Expression="CSU_DEG_CNTR_TITLE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.CsuDegCntrTitle_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CsuDegDeliver"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="3"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CSU_DEG_DELIVER"
+    Expression="CSU_DEG_DELIVER"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.CsuDegDeliver_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DisciplineTitle"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="60"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="DISCIPLINE_TITLE"
+    Expression="DISCIPLINE_TITLE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.DisciplineTitle_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DisciplineCode"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="2"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="DISCIPLINE_CODE"
+    Expression="DISCIPLINE_CODE"
+    SQLType="VARCHAR"
+    LOVName="LOV_DisciplineCode">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.DisciplineCode_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DegreePrgTitle"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="DEGREE_PRG_TITLE"
+    Expression="DEGREE_PRG_TITLE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.DegreePrgTitle_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CipCode"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="7"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CIP_CODE"
+    Expression="CIP_CODE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TmcDescription"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TMC_DESCRIPTION"
+    Expression="TMC_DESCRIPTION"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.TmcDescription_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CccProgramType"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="5"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CCC_PROGRAM_TYPE"
+    Expression="CCC_PROGRAM_TYPE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.CccProgramType_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Approved"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="APPROVED"
+    Expression="APPROVED"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.Approved_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ApprovedDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    AliasName="APPROVED_DATE"
+    Expression="APPROVED_DATE"
+    SQLType="DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.ApprovedDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EffectiveTerm"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="6"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="EFFECTIVE_TERM"
+    Expression="EFFECTIVE_TERM"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="6"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.EffectiveTerm_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EffectiveDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    AliasName="EFFECTIVE_DATE"
+    Expression="EFFECTIVE_DATE"
+    SQLType="DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.EffectiveDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="InactiveTerm"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="6"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="INACTIVE_TERM"
+    Expression="INACTIVE_TERM"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="6"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.InactiveTerm_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="InactiveDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    AliasName="INACTIVE_DATE"
+    Expression="INACTIVE_DATE"
+    SQLType="DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.InactiveDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UpdateUser"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="UPDATE_USER"
+    Expression="UPDATE_USER"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UpdateDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    AliasName="UPDATE_DATE"
+    Expression="UPDATE_DATE"
+    SQLType="DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="edu.calstate.tmcp.model.queries.TmcCsuPV.UpdateDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreateUser"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CREATE_USER"
+    Expression="CREATE_USER"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreateDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    AliasName="CREATE_DATE"
+    Expression="CREATE_DATE"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="MoKey"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TmcCsuPVRow"/>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="TmcCsuPVCriteria"
+    ViewObjectName="edu.calstate.tmcp.model.queries.TmcCsuPV"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="TmcCsuPVCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="CsuDegCampus"
+        ViewAttribute="CsuDegCampus"
+        Operator="="
+        Conjunction="AND"
+        Value=":qCampusCode"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="CsuDegType"
+        ViewAttribute="CsuDegType"
+        Operator="="
+        Conjunction="AND"
+        Value=":qDegreeType"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="CsuDegMajorCd"
+        ViewAttribute="CsuDegMajorCd"
+        Operator="="
+        Conjunction="AND"
+        Value=":qMajorCode"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="CsuDegCnctrCd"
+        ViewAttribute="CsuDegCnctrCd"
+        Operator="="
+        Conjunction="AND"
+        Value=":qOptionCode"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="TmcCode"
+        ViewAttribute="TmcCode"
+        Operator="="
+        Conjunction="AND"
+        Value=":qTmc"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="DisciplineCode"
+        ViewAttribute="DisciplineCode"
+        Operator="="
+        Conjunction="AND"
+        Value=":qDisciplineCode"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="DegreePrgTitle"
+        ViewAttribute="DegreePrgTitle"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=":qGenericMajor"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="CsuDegCampus"/>
+    <Item Value="CsuDegType"/>
+    <Item Value="CsuDegMajorCd"/>
+    <Item Value="CsuDegCnctrCd"/>
+    <Item Value="CsuDegCnctrSeq"/>
+    <Item Value="CsuDegSource"/>
+    <Item Value="TmcCode"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="edu.calstate.tmcp.model.resources.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

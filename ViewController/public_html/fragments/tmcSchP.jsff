@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1" topHeight="200px" bottomHeight="15px">
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top">
+      <af:panelHeader text="CSU TMC search site" id="ph1">
+        <af:query id="qryId1" headerText="Search" disclosed="true"
+                  value="#{bindings.TmcCsuPViewCriteriaQuery.queryDescriptor}"
+                  model="#{bindings.TmcCsuPViewCriteriaQuery.queryModel}"
+                  queryListener="#{bindings.TmcCsuPViewCriteriaQuery.processQuery}"
+                  queryOperationListener="#{bindings.TmcCsuPViewCriteriaQuery.processQueryOperation}"
+                  resultComponentId="::pc1:resId1" rows="4" maxColumns="2"/>
+      </af:panelHeader>
+    </f:facet>
+    <f:facet name="bottom"/>
+    <f:facet name="center">
+      <af:panelCollection id="pc1">
+        <f:facet name="menus">
+          <af:menu text="My Option(s)" id="m1">
+            <af:commandMenuItem text="Export to Excel" id="cmi1" partialTriggers="::qryId1"
+                                disabled="#{bindings.TmcCsuPView1Iterator.estimatedRowCount lt 1}">
+              <af:exportCollectionActionListener type="excelHTML" exportedId="resId1" filename="CsuTmcMatches.xls"
+                                                 title="CSU TMC Matches"/>
+            </af:commandMenuItem>
+          </af:menu>
+        </f:facet>
+        <f:facet name="toolbar"/>
+        <f:facet name="statusbar"/>
+        <af:table value="#{bindings.TmcCsuPView1.collectionModel}" var="row" rows="#{bindings.TmcCsuPView1.rangeSize}"
+                  emptyText="#{bindings.TmcCsuPView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  rowBandingInterval="0" selectedRowKeys="#{bindings.TmcCsuPView1.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.TmcCsuPView1.collectionModel.makeCurrent}" rowSelection="single"
+                  fetchSize="#{bindings.TmcCsuPView1.rangeSize}" id="resId1" summary="Active TMCs"
+                  columnStretching="column:resId1c12">
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.MoKey.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.MoKey.label}" id="resId1c29" width="108">
+            <af:outputText value="#{row.MoKey}" shortDesc="#{bindings.TmcCsuPView1.hints.MoKey.tooltip}" id="ot29"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.CampusCode.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.CampusCode.label}" id="resId1c1" width="45">
+            <af:outputText value="#{row.CampusCode}" shortDesc="#{bindings.TmcCsuPView1.hints.CampusCode.tooltip}"
+                           id="ot1"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.CampusName.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.CampusName.label}" id="resId1c8">
+            <af:outputText value="#{row.CampusName}" shortDesc="#{bindings.TmcCsuPView1.hints.CampusName.tooltip}"
+                           id="ot8"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.DegreeType.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.DegreeType.label}" id="resId1c2" width="50">
+            <af:outputText value="#{row.DegreeType}" shortDesc="#{bindings.TmcCsuPView1.hints.DegreeType.tooltip}"
+                           id="ot2"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.DegreePrgCodeMajor.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.DegreePrgCodeMajor.label}" id="resId1c3" width="65">
+            <af:outputText value="#{row.DegreePrgCodeMajor}"
+                           shortDesc="#{bindings.TmcCsuPView1.hints.DegreePrgCodeMajor.tooltip}" id="ot3"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.CipCode.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.CipCode.label}" id="resId1c16" width="58">
+            <af:outputText value="#{row.CipCode}" shortDesc="#{bindings.TmcCsuPView1.hints.CipCode.tooltip}" id="ot16"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.DisciplineTitle.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.DisciplineTitle.label}" id="resId1c14">
+            <af:outputText value="#{row.DisciplineTitle}"
+                           shortDesc="#{bindings.TmcCsuPView1.hints.DisciplineTitle.tooltip}" id="ot14"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.DegreePrgCodeOption.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.DegreePrgCodeOption.label}" id="resId1c4" width="68">
+            <af:outputText value="#{row.DegreePrgCodeOption}"
+                           shortDesc="#{bindings.TmcCsuPView1.hints.DegreePrgCodeOption.tooltip}" id="ot4"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.OptionSuffix.name}"
+                     headerText="#{bindings.TmcCsuPView1.hints.OptionSuffix.label}" id="resId1c5" width="30">
+            <af:outputText value="#{row.OptionSuffix}" shortDesc="#{bindings.TmcCsuPView1.hints.OptionSuffix.tooltip}"
+                           id="ot5"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.DegreePrgTitleOption.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.DegreePrgTitleOption.label}" id="resId1c10"
+                     rendered="false">
+            <af:outputText value="#{row.DegreePrgTitleOption}"
+                           shortDesc="#{bindings.TmcCsuPView1.hints.DegreePrgTitleOption.tooltip}" id="ot10"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.CampusSpecMajorTitle.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.CampusSpecMajorTitle.label}" id="resId1c11" width="120">
+            <af:outputText value="#{row.CampusSpecMajorTitle}"
+                           shortDesc="#{bindings.TmcCsuPView1.hints.CampusSpecMajorTitle.tooltip}" id="ot11"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.CampusSpecificOptionTitle.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.CampusSpecificOptionTitle.label}" id="resId1c12">
+            <af:outputText value="#{row.CampusSpecificOptionTitle}"
+                           shortDesc="#{bindings.TmcCsuPView1.hints.CampusSpecificOptionTitle.tooltip}" id="ot12"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.TmcCode.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.TmcCode.label}" id="resId1c7" width="48">
+            <af:outputText value="#{row.TmcCode}" shortDesc="#{bindings.TmcCsuPView1.hints.TmcCode.tooltip}" id="ot7"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.TmcDescription.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.TmcDescription.label}" id="resId1c17" width="120">
+            <af:outputText value="#{row.TmcDescription}"
+                           shortDesc="#{bindings.TmcCsuPView1.hints.TmcDescription.tooltip}" id="ot17"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.CccProgramType.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.CccProgramType.label}" id="resId1c18" width="65">
+            <af:outputText value="#{row.CccProgramType}"
+                           shortDesc="#{bindings.TmcCsuPView1.hints.CccProgramType.tooltip}" id="ot18"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.DegreePrgTitleMajor.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.DegreePrgTitleMajor.label}" id="resId1c9"
+                     rendered="false">
+            <af:outputText value="#{row.DegreePrgTitleMajor}"
+                           shortDesc="#{bindings.TmcCsuPView1.hints.DegreePrgTitleMajor.tooltip}" id="ot9"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.MajorTwo.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.MajorTwo.label}" id="resId1c13" rendered="false">
+            <af:outputText value="#{row.MajorTwo}" shortDesc="#{bindings.TmcCsuPView1.hints.MajorTwo.tooltip}"
+                           id="ot13"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.DeliveryFormat1.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.DeliveryFormat1.label}" id="resId1c15" width="75">
+            <af:outputText value="#{row.DeliveryFormat1}"
+                           shortDesc="#{bindings.TmcCsuPView1.hints.DeliveryFormat1.tooltip}" id="ot15"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.Approved.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.Approved.label}" id="resId1c19" width="50">
+            <af:outputText value="#{row.Approved}" shortDesc="#{bindings.TmcCsuPView1.hints.Approved.tooltip}"
+                           id="ot19"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.ApprovedDate.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.ApprovedDate.label}" id="resId1c20" width="60">
+            <af:outputText value="#{row.ApprovedDate}" shortDesc="#{bindings.TmcCsuPView1.hints.ApprovedDate.tooltip}"
+                           id="ot20">
+              <af:convertDateTime pattern="#{bindings.TmcCsuPView1.hints.ApprovedDate.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.EffectiveTerm.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.EffectiveTerm.label}" id="resId1c21" width="60">
+            <af:outputText value="#{row.EffectiveTerm}" shortDesc="#{bindings.TmcCsuPView1.hints.EffectiveTerm.tooltip}"
+                           id="ot21"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.TmcCsuPView1.hints.EffectiveDate.name}" sortable="true"
+                     headerText="#{bindings.TmcCsuPView1.hints.EffectiveDate.label}" id="resId1c22" width="60">
+            <af:outputText value="#{row.EffectiveDate}" shortDesc="#{bindings.TmcCsuPView1.hints.EffectiveDate.tooltip}"
+                           id="ot22">
+              <af:convertDateTime pattern="#{bindings.TmcCsuPView1.hints.EffectiveDate.format}"/>
+            </af:outputText>
+          </af:column>
+        </af:table>
+        <f:facet name="afterToolbar">
+          <af:group id="g1">
+            <af:outputText value="Total record(s) found : #{bindings.TmcCsuPView1Iterator.estimatedRowCount}" id="ot30"
+                           partialTriggers="::qryId1"/>
+          </af:group>
+        </f:facet>
+      </af:panelCollection>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

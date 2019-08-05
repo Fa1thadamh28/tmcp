@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="tmcSchPPageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TmcCsuPView1" RangeSize="25" DataControl="TmcpAMDataControl" id="TmcCsuPView1Iterator"/>
+    <searchRegion Criteria="TmcCsuPViewCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="TmcCsuPView1Iterator" id="TmcCsuPViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TmcCsuPView1Iterator" id="TmcCsuPView1">
+      <nodeDefinition DefName="edu.calstate.tmcp.model.queries.TmcCsuPView" Name="TmcCsuPView10">
+        <AttrNames>
+          <Item Value="CampusCode"/>
+          <Item Value="DegreeType"/>
+          <Item Value="DegreePrgCodeMajor"/>
+          <Item Value="DegreePrgCodeOption"/>
+          <Item Value="OptionSuffix"/>
+          <Item Value="Source"/>
+          <Item Value="TmcCode"/>
+          <Item Value="CampusName"/>
+          <Item Value="DegreePrgTitleMajor"/>
+          <Item Value="DegreePrgTitleOption"/>
+          <Item Value="CampusSpecMajorTitle"/>
+          <Item Value="CampusSpecificOptionTitle"/>
+          <Item Value="MajorTwo"/>
+          <Item Value="DisciplineTitle"/>
+          <Item Value="DeliveryFormat1"/>
+          <Item Value="CipCode"/>
+          <Item Value="TmcDescription"/>
+          <Item Value="CccProgramType"/>
+          <Item Value="Approved"/>
+          <Item Value="ApprovedDate"/>
+          <Item Value="EffectiveTerm"/>
+          <Item Value="EffectiveDate"/>
+          <Item Value="InactiveTerm"/>
+          <Item Value="InactiveDate"/>
+          <Item Value="UpdateUser"/>
+          <Item Value="UpdateDate"/>
+          <Item Value="CreateUser"/>
+          <Item Value="CreateDate"/>
+          <Item Value="MoKey"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document title="CSU Similar TMC site 2" id="d1">
+      <af:form id="f1">
+        <af:pageTemplate viewId="/WEB-INF/template/tmcpTemplate.jspx" value="#{bindings.ptb1}" id="pt1">
+          <f:facet name="content">
+            <af:region value="#{bindings.tmcSchPflow1.regionModel}" id="r1"/>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

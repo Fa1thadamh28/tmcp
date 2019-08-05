@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="TmcSchPPageDef"
+                Package="edu.calstate.tmcp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.tmcpTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <taskFlow id="tmcShPflow1" taskFlowId="/WEB-INF/tmcShP-flow.xml#tmcShP-flow" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings/>
+</pageDefinition>

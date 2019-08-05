@@ -1,0 +1,12 @@
+//Groovy Scripts for edu.calstate.tmcp.model.queries.TmcCsuPView
+
+package edu.calstate.tmcp.model.queries
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="MoKey")
+def MoKey_ExpressionScript_Expression()
+{
+CampusCode+DegreeType+DegreePrgCodeMajor+DegreePrgCodeOption+OptionSuffix
+}
+
