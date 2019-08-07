@@ -24,6 +24,12 @@
               <af:exportCollectionActionListener type="excelHTML" exportedId="resId1" filename="CsuTmcMatches.xls"
                                                  title="CSU TMC Matches"/>
             </af:commandMenuItem>
+            <af:commandMenuItem text="Export 2 Excel - POI" id="cmi2"
+                                disabled="#{bindings.TmcCsuPV1Iterator.estimatedRowCount lt 1}">
+              <af:exportCollectionActionListener type="RSExcelExport" exportedId="resId1"
+                                                 filename="ExportSelecedtRows.xls"
+                                                 title="Title of export selected rows"/>
+            </af:commandMenuItem>
           </af:menu>
         </f:facet>
         <f:facet name="toolbar"/>

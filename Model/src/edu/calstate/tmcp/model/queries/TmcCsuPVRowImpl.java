@@ -12,50 +12,49 @@ import oracle.jbo.domain.Date;
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
 public class TmcCsuPVRowImpl
-  extends TmcpViewRowImpl
-{
+  extends TmcpViewRowImpl {
   /**
    * AttributesEnum: generated enum for identifying attributes and accessors. DO NOT MODIFY.
    */
   protected enum AttributesEnum
   {
-    CsuDegCampus,
-    CsuDegType,
-    CsuDegMajorCd,
-    MajorTwo,
-    CsuDegCnctrCd,
-    CsuDegCnctrSeq,
-    CsuDegSource,
-    TmcCode,
-    CampusName,
-    CsuDegCampTitle,
-    CsuDegCntrTitle,
-    CsuDegDeliver,
-    DisciplineTitle,
-    DisciplineCode,
-    DegreePrgTitle,
-    CipCode,
-    TmcDescription,
-    CccProgramType,
-    Approved,
-    ApprovedDate,
-    EffectiveTerm,
-    EffectiveDate,
-    InactiveTerm,
-    InactiveDate,
-    UpdateUser,
-    UpdateDate,
-    CreateUser,
-    CreateDate,
-    MoKey,
-    AllCampusView1,
-    DegreeTypeView1,
-    VwAllDegreeCodes1,
-    TmcV1,
-    DisciplineV1,
-    VwAllDegreeCodes2;
-    private static AttributesEnum[] vals = null;
-    private static final int firstIndex = 0;
+        CsuDegCampus,
+        CsuDegType,
+        CsuDegMajorCd,
+        MajorTwo,
+        CsuDegCnctrCd,
+        CsuDegCnctrSeq,
+        CsuDegSource,
+        TmcCode,
+        CampusName,
+        CsuDegCampTitle,
+        CsuDegCntrTitle,
+        CsuDegDeliver,
+        DisciplineTitle,
+        DisciplineCode,
+        DegreePrgTitle,
+        CipCode,
+        TmcDescription,
+        CccProgramType,
+        Approved,
+        ApprovedDate,
+        EffectiveTerm,
+        EffectiveDate,
+        InactiveTerm,
+        InactiveDate,
+        UpdateUser,
+        UpdateDate,
+        CreateUser,
+        CreateDate,
+        MoKey,
+        AllCampusView1,
+        DegreeTypeView1,
+        VwAllDegreeCodes1,
+        TmcV1,
+        DisciplineV1,
+        VwAllDegreeCodes2;
+        private static AttributesEnum[] vals = null;
+        private static final int firstIndex = 0;
 
     protected int index()
     {
@@ -83,45 +82,45 @@ public class TmcCsuPVRowImpl
   }
 
 
-  public static final int CSUDEGCAMPUS = AttributesEnum.CsuDegCampus.index();
-  public static final int CSUDEGTYPE = AttributesEnum.CsuDegType.index();
-  public static final int CSUDEGMAJORCD = AttributesEnum.CsuDegMajorCd.index();
-  public static final int MAJORTWO = AttributesEnum.MajorTwo.index();
-  public static final int CSUDEGCNCTRCD = AttributesEnum.CsuDegCnctrCd.index();
-  public static final int CSUDEGCNCTRSEQ = AttributesEnum.CsuDegCnctrSeq.index();
-  public static final int CSUDEGSOURCE = AttributesEnum.CsuDegSource.index();
-  public static final int TMCCODE = AttributesEnum.TmcCode.index();
-  public static final int CAMPUSNAME = AttributesEnum.CampusName.index();
-  public static final int CSUDEGCAMPTITLE = AttributesEnum.CsuDegCampTitle.index();
-  public static final int CSUDEGCNTRTITLE = AttributesEnum.CsuDegCntrTitle.index();
-  public static final int CSUDEGDELIVER = AttributesEnum.CsuDegDeliver.index();
-  public static final int DISCIPLINETITLE = AttributesEnum.DisciplineTitle.index();
-  public static final int DISCIPLINECODE = AttributesEnum.DisciplineCode.index();
-  public static final int DEGREEPRGTITLE = AttributesEnum.DegreePrgTitle.index();
-  public static final int CIPCODE = AttributesEnum.CipCode.index();
-  public static final int TMCDESCRIPTION = AttributesEnum.TmcDescription.index();
-  public static final int CCCPROGRAMTYPE = AttributesEnum.CccProgramType.index();
-  public static final int APPROVED = AttributesEnum.Approved.index();
-  public static final int APPROVEDDATE = AttributesEnum.ApprovedDate.index();
-  public static final int EFFECTIVETERM = AttributesEnum.EffectiveTerm.index();
-  public static final int EFFECTIVEDATE = AttributesEnum.EffectiveDate.index();
-  public static final int INACTIVETERM = AttributesEnum.InactiveTerm.index();
-  public static final int INACTIVEDATE = AttributesEnum.InactiveDate.index();
-  public static final int UPDATEUSER = AttributesEnum.UpdateUser.index();
-  public static final int UPDATEDATE = AttributesEnum.UpdateDate.index();
-  public static final int CREATEUSER = AttributesEnum.CreateUser.index();
-  public static final int CREATEDATE = AttributesEnum.CreateDate.index();
-  public static final int MOKEY = AttributesEnum.MoKey.index();
-  public static final int ALLCAMPUSVIEW1 = AttributesEnum.AllCampusView1.index();
-  public static final int DEGREETYPEVIEW1 = AttributesEnum.DegreeTypeView1.index();
-  public static final int VWALLDEGREECODES1 = AttributesEnum.VwAllDegreeCodes1.index();
-  public static final int TMCV1 = AttributesEnum.TmcV1.index();
-  public static final int DISCIPLINEV1 = AttributesEnum.DisciplineV1.index();
-  public static final int VWALLDEGREECODES2 = AttributesEnum.VwAllDegreeCodes2.index();
+    public static final int CSUDEGCAMPUS = AttributesEnum.CsuDegCampus.index();
+    public static final int CSUDEGTYPE = AttributesEnum.CsuDegType.index();
+    public static final int CSUDEGMAJORCD = AttributesEnum.CsuDegMajorCd.index();
+    public static final int MAJORTWO = AttributesEnum.MajorTwo.index();
+    public static final int CSUDEGCNCTRCD = AttributesEnum.CsuDegCnctrCd.index();
+    public static final int CSUDEGCNCTRSEQ = AttributesEnum.CsuDegCnctrSeq.index();
+    public static final int CSUDEGSOURCE = AttributesEnum.CsuDegSource.index();
+    public static final int TMCCODE = AttributesEnum.TmcCode.index();
+    public static final int CAMPUSNAME = AttributesEnum.CampusName.index();
+    public static final int CSUDEGCAMPTITLE = AttributesEnum.CsuDegCampTitle.index();
+    public static final int CSUDEGCNTRTITLE = AttributesEnum.CsuDegCntrTitle.index();
+    public static final int CSUDEGDELIVER = AttributesEnum.CsuDegDeliver.index();
+    public static final int DISCIPLINETITLE = AttributesEnum.DisciplineTitle.index();
+    public static final int DISCIPLINECODE = AttributesEnum.DisciplineCode.index();
+    public static final int DEGREEPRGTITLE = AttributesEnum.DegreePrgTitle.index();
+    public static final int CIPCODE = AttributesEnum.CipCode.index();
+    public static final int TMCDESCRIPTION = AttributesEnum.TmcDescription.index();
+    public static final int CCCPROGRAMTYPE = AttributesEnum.CccProgramType.index();
+    public static final int APPROVED = AttributesEnum.Approved.index();
+    public static final int APPROVEDDATE = AttributesEnum.ApprovedDate.index();
+    public static final int EFFECTIVETERM = AttributesEnum.EffectiveTerm.index();
+    public static final int EFFECTIVEDATE = AttributesEnum.EffectiveDate.index();
+    public static final int INACTIVETERM = AttributesEnum.InactiveTerm.index();
+    public static final int INACTIVEDATE = AttributesEnum.InactiveDate.index();
+    public static final int UPDATEUSER = AttributesEnum.UpdateUser.index();
+    public static final int UPDATEDATE = AttributesEnum.UpdateDate.index();
+    public static final int CREATEUSER = AttributesEnum.CreateUser.index();
+    public static final int CREATEDATE = AttributesEnum.CreateDate.index();
+    public static final int MOKEY = AttributesEnum.MoKey.index();
+    public static final int ALLCAMPUSVIEW1 = AttributesEnum.AllCampusView1.index();
+    public static final int DEGREETYPEVIEW1 = AttributesEnum.DegreeTypeView1.index();
+    public static final int VWALLDEGREECODES1 = AttributesEnum.VwAllDegreeCodes1.index();
+    public static final int TMCV1 = AttributesEnum.TmcV1.index();
+    public static final int DISCIPLINEV1 = AttributesEnum.DisciplineV1.index();
+    public static final int VWALLDEGREECODES2 = AttributesEnum.VwAllDegreeCodes2.index();
 
-  /**
-   * This is the default constructor (do not remove).
-   */
+    /**
+     * This is the default constructor (do not remove).
+     */
   public TmcCsuPVRowImpl()
   {
   }

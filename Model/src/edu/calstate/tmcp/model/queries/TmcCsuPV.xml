@@ -194,51 +194,51 @@
       Name="AllDegreeCri"
       Hint="showAndExecute"/>
   </ListBinding>
-  <SQLQuery><![CDATA[SELECT T.CSU_DEG_CAMPUS, 
-       T.CSU_DEG_TYPE, 
-       T.CSU_DEG_MAJOR_CD, 
-       SUBSTR (T.CSU_DEG_MAJOR_CD, 1, 2) AS MAJOR_TWO, 
-       T.CSU_DEG_CNCTR_CD, 
-       T.CSU_DEG_CNCTR_SEQ, 
-       T.CSU_DEG_SOURCE, 
-       T.TMC_CODE, 
-       C.CAMPUS_NAME, 
-       D.CSU_DEG_CAMP_TITLE, 
-       D.CSU_DEG_CNTR_TITLE, 
-       D.CSU_DEG_DELIVER, 
-       DD.DISCIPLINE_TITLE, 
-       DD.DISCIPLINE_CODE, 
-       P.DEGREE_PRG_TITLE, 
-       P.CIP_CODE, 
-       RT.TMC_DESCRIPTION, 
-       RT.CCC_PROGRAM_TYPE, 
-       T.APPROVED, 
-       T.APPROVED_DATE, 
-       T.EFFECTIVE_TERM, 
-       T.EFFECTIVE_DATE, 
-       T.INACTIVE_TERM, 
-       T.INACTIVE_DATE, 
-       T.UPDATE_USER, 
-       T.UPDATE_DATE, 
-       T.CREATE_USER, 
-       T.CREATE_DATE 
-  FROM DEGPMGR.TMC_CSU_M             T, 
-       DEGPMGR.CAMPUS                C, 
-       DEGPMGR.CSU_TMC_VW1           D, 
-       DEGPMGR.DISCIPLINE_DIVISION   DD, 
-       DEGPMGR.DEGREE_PROGRAM_CODES  P, 
-       DEGPMGR.TMC                   RT 
- WHERE     T.CSU_DEG_CAMPUS = C.CAMPUS_CODE 
-       AND (    T.CSU_DEG_CAMPUS = D.CSU_DEG_CAMPUS 
-            AND T.CSU_DEG_TYPE = D.CSU_DEG_TYPE 
-            AND T.CSU_DEG_MAJOR_CD = D.CSU_DEG_MAJOR_CD 
-            AND T.CSU_DEG_CNCTR_CD = D.CSU_DEG_CNCTR_CD 
-            AND T.CSU_DEG_CNCTR_SEQ = D.CSU_DEG_CNCTR_SEQ 
-            AND T.CSU_DEG_SOURCE = D.CSU_DEG_SOURCE) 
-       AND SUBSTR (T.CSU_DEG_MAJOR_CD, 1, 2) = DD.DISCIPLINE_CODE 
-       AND T.CSU_DEG_MAJOR_CD = P.DEGREE_PRG_CODE 
-       AND T.TMC_CODE = RT.TMC_CODE 
-       AND T.APPROVED = 'Y' 
+  <SQLQuery><![CDATA[SELECT T.CSU_DEG_CAMPUS,   
+       T.CSU_DEG_TYPE,   
+       T.CSU_DEG_MAJOR_CD,   
+       SUBSTR (T.CSU_DEG_MAJOR_CD, 1, 2) AS MAJOR_TWO,   
+       T.CSU_DEG_CNCTR_CD,   
+       T.CSU_DEG_CNCTR_SEQ,   
+       T.CSU_DEG_SOURCE,   
+       T.TMC_CODE,   
+       C.CAMPUS_NAME,   
+       D.CSU_DEG_CAMP_TITLE,   
+       D.CSU_DEG_CNTR_TITLE,   
+       D.CSU_DEG_DELIVER,   
+       DD.DISCIPLINE_TITLE,   
+       DD.DISCIPLINE_CODE,   
+       P.DEGREE_PRG_TITLE,   
+       P.CIP_CODE,   
+       RT.TMC_DESCRIPTION,   
+       RT.CCC_PROGRAM_TYPE,   
+       T.APPROVED,   
+       T.APPROVED_DATE,   
+       T.EFFECTIVE_TERM,   
+       T.EFFECTIVE_DATE,   
+       T.INACTIVE_TERM,   
+       T.INACTIVE_DATE,   
+       T.UPDATE_USER,   
+       T.UPDATE_DATE,   
+       T.CREATE_USER,   
+       T.CREATE_DATE   
+  FROM DEGPMGR.TMC_CSU_M             T,   
+       DEGPMGR.CAMPUS                C,   
+       DEGPMGR.CSU_TMC_VW2           D,   
+       DEGPMGR.DISCIPLINE_DIVISION   DD,   
+       DEGPMGR.DEGREE_PROGRAM_CODES  P,   
+       DEGPMGR.TMC                   RT   
+ WHERE     T.CSU_DEG_CAMPUS = C.CAMPUS_CODE   
+       AND (    T.CSU_DEG_CAMPUS = D.CSU_DEG_CAMPUS   
+            AND T.CSU_DEG_TYPE = D.CSU_DEG_TYPE   
+            AND T.CSU_DEG_MAJOR_CD = D.CSU_DEG_MAJOR_CD   
+            AND T.CSU_DEG_CNCTR_CD = D.CSU_DEG_CNCTR_CD   
+            AND T.CSU_DEG_CNCTR_SEQ = D.CSU_DEG_CNCTR_SEQ   
+            AND T.CSU_DEG_SOURCE = D.CSU_DEG_SOURCE)   
+       AND SUBSTR (T.CSU_DEG_MAJOR_CD, 1, 2) = DD.DISCIPLINE_CODE   
+       AND T.CSU_DEG_MAJOR_CD = P.DEGREE_PRG_CODE   
+       AND T.TMC_CODE = RT.TMC_CODE   
+       AND T.APPROVED = 'Y'   
        AND T.INACTIVE_TERM IS NULL]]></SQLQuery>
   <ViewAttribute
     Name="CsuDegCampus"

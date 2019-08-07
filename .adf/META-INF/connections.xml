@@ -20,7 +20,7 @@
         <Contents>pdborcl</Contents>
       </StringRefAddr>
       <StringRefAddr addrType="user">
-        <Contents>DEGREAD</Contents>
+        <Contents>DEGPMGR</Contents>
       </StringRefAddr>
     </RefAddresses>
   </Reference>
